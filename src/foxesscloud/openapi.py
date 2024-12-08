@@ -2334,7 +2334,7 @@ def set_tariff(find, update=1, times=None, forecast_times=None, strategy=None, d
             use[key]['end'] = time_hours(t[2])
             if len(t) > 3:
                 use[key]['hold'] = t[3]
-            gmt = ' GMT' if tariff[key].get('gmt') is not None else ''
+            gmt = ' GMT' if use[key].get('gmt') is not None else ''
             output(f"  {key} period: {hours_time(t[1])}-{hours_time(t[2])}{gmt}")
     # update dynamic charge times
     if use.get('agile') is not None:
